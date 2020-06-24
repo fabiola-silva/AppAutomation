@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AutomationDevice</string>
+            <!--Strings fazem parte do layout adicionar projeto    -->
+    <string name="textoProjeto">Projeto: </string>
+    <string name="textoCliente">Cliente: </string>
+    <string name="textoEndereco">Endereço: </string>
+    <string name="txtBtnInserir">Inserir </string>
+    <string name="txtBtnSalvar">Salvar </string>
+    <string name="txtEdtProjeto">Insira o nome do projeto</string>
+    <string name="txtEdtCliente">Digite seu nome</string>
+    <string name="txtEdtEndereco">Digite seu endereço</string>
+</resources>
