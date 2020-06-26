@@ -2,9 +2,11 @@ package com.example.automationdevice;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -39,12 +41,24 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.txtProjeto.setText(String.valueOf((projeto.get(position))));
         holder.txtCliente.setText(String.valueOf((cliente.get(position))));
         holder.txtEndereco.setText(String.valueOf(endereco.get(position)));
         holder.data.setText(String.valueOf(data.get(position)));
+
+        holder.editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {//pega os dados e envia para tela de editar
+                Intent intent = new Intent(context, Editar_Projeto.class);
+                intent.putExtra("id_Projeto", String.valueOf(id_projeto.get(position)));
+                intent.putExtra("Projeto", String.valueOf(projeto.get(position)));
+                intent.putExtra("cliente_Projeto", String.valueOf(cliente.get(position)));
+                intent.putExtra("endereco_Projeto", String.valueOf(endereco.get(position)));
+                activity.startActivityForResult(intent, 1);
+            }
+        });
 
     }
 
@@ -57,7 +71,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtProjeto, txtCliente, txtEndereco, data;
-        LinearLayout mainLayout;
+        ImageView editar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,7 +80,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             txtCliente = itemView.findViewById(R.id.txtCliente);
             txtEndereco = itemView.findViewById(R.id.txtEndereco);
             data = itemView.findViewById(R.id.data);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            editar = itemView.findViewById(R.id.iv_editar);
 
         }
     }

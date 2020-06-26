@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 
 import org.w3c.dom.Text;
 
+import java.util.Date;
+
 public class MyDB extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "Automacao.db";
@@ -81,5 +83,22 @@ public class MyDB extends SQLiteOpenHelper {
             cursor = db.rawQuery(query,null);
         }
         return cursor;
+    }
+
+    void updateData(String row_id, String Projeto, String Cliente, String Endereco, String Data){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NAME_PROJETO, Projeto);
+        cv.put(COLUMN_NAME_CLIENTE, Cliente);
+        cv.put(COLUMN_NAME_ENDERECO, Endereco);
+        cv.put(DATE, Data);
+
+
+        long result = db.update(TABLE_PROJETO, cv,"id_projeto=?",new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao alterar", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(context, "Alterado com sucesso!", Toast.LENGTH_LONG).show();
+        }
     }
 }

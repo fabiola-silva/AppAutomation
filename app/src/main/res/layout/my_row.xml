@@ -12,10 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/iv_editar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/data"
+                app:srcCompat="@drawable/ic_editar" />
 
             <TextView
                 android:id="@+id/Projeto"
@@ -35,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="te"
+                android:text=""
                 android:textColor="@color/colorblack"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="tttt"
+                android:text=""
                 android:textColor="@color/colorblack"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="ghghghghg"
+                android:text=""
                 android:textColor="@color/colorblack"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

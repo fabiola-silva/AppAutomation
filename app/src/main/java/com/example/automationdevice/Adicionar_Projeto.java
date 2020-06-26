@@ -26,7 +26,7 @@ public class Adicionar_Projeto extends AppCompatActivity {
         edtEndereco = findViewById(R.id.edtEndereco);
         btnSalvar = findViewById(R.id.btnSalvar);
 
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd-MM-yyyy"); // padronizar a data no padrão brasileiro.
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy"); // padronizar a data no padrão brasileiro.
         Date data = new Date(); //verifica a data
         final String dataFormatada  = formatoData.format(data);//converte a data para o formato atual.
 
