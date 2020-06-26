@@ -1,5 +1,6 @@
 package com.example.automationdevice;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,16 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
-
+    Activity activity;
     private Context context;
-    private ArrayList projeto, cliente, endereco, data;
+    private ArrayList id_projeto, projeto, cliente, endereco, data;
 
-    Adapter(Context context, ArrayList projeto, ArrayList cliente, ArrayList endereco, ArrayList data){
+
+    Adapter(Activity activity, Context context, ArrayList  id_projeto,  ArrayList projeto, ArrayList cliente, ArrayList endereco, ArrayList data){
+        this.activity = activity;
         this.context = context;
+        this.id_projeto = id_projeto;
         this.projeto = projeto;
         this.cliente = cliente;
         this.endereco = endereco;
         this.data = data;
+
     }
 
     @NonNull
@@ -36,24 +41,30 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+        holder.txtProjeto.setText(String.valueOf((projeto.get(position))));
+        holder.txtCliente.setText(String.valueOf((cliente.get(position))));
+        holder.txtEndereco.setText(String.valueOf(endereco.get(position)));
+        holder.data.setText(String.valueOf(data.get(position)));
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return id_projeto.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView projeto, cliente, endereco, data;
+        TextView txtProjeto, txtCliente, txtEndereco, data;
         LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            projeto = itemView.findViewById(R.id.txtProjeto);
-            cliente = itemView.findViewById(R.id.txtCliente);
-            endereco = itemView.findViewById(R.id.txtEndereco);
+            txtProjeto = itemView.findViewById(R.id.txtProjeto);
+            txtCliente = itemView.findViewById(R.id.txtCliente);
+            txtEndereco = itemView.findViewById(R.id.txtEndereco);
             data = itemView.findViewById(R.id.data);
             mainLayout = itemView.findViewById(R.id.mainLayout);
 
