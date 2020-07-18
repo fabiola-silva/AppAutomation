@@ -67,9 +67,9 @@ public class MyDB extends SQLiteOpenHelper {
 
         long result = db.insert(TABLE_PROJETO,null, cv);
         if(result == -1){
-            Toast.makeText(context, "FALHA AO INSERIR", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Falha ao inserir", Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(context, "ADICIONADO COM SUCESSO", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Adicionado com sucesso", Toast.LENGTH_LONG).show();
         }
 
     }
@@ -99,6 +99,16 @@ public class MyDB extends SQLiteOpenHelper {
             Toast.makeText(context, "Falha ao alterar", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(context, "Alterado com sucesso!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    void deleteOneRow(String row_id){ // Função de excluir
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_PROJETO, "id_projeto=?",new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Falha ao excluir", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(context, "Excluindo com sucesso!", Toast.LENGTH_LONG).show();
         }
     }
 }

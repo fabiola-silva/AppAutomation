@@ -22,11 +22,25 @@
                 android:id="@+id/iv_editar"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="56dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.982"
+                app:layout_constraintStart_toEndOf="@+id/Cliente"
                 app:layout_constraintTop_toBottomOf="@+id/data"
                 app:srcCompat="@drawable/ic_editar" />
+
+            <ImageView
+                android:id="@+id/iv_deletar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.851"
+                app:layout_constraintStart_toEndOf="@+id/iv_editar"
+                app:layout_constraintTop_toBottomOf="@+id/data"
+                app:srcCompat="@drawable/ic_delete" />
 
             <TextView
                 android:id="@+id/Projeto"
@@ -45,8 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:text=""
+                android:maxWidth="195dp"
                 android:textColor="@color/colorblack"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -96,9 +111,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text=""
                 android:textColor="@color/colorblack"
                 android:textSize="18sp"
+                android:text=""
+                android:maxWidth="195dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Endereco"
@@ -108,8 +124,21 @@
                 android:id="@+id/data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnAmbiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="104dp"
+                android:text="Ambiente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toEndOf="@+id/txtEndereco"
+                app:layout_constraintTop_toBottomOf="@+id/iv_deletar" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
